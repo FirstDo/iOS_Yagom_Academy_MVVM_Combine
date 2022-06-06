@@ -163,7 +163,17 @@ final class OrderViewController: UIViewController {
     
     @objc
     private func juiceOrderButtonTapped(sender: UIButton) {
-        // MARK: - empty
+        viewModel
+            .orderButtonTapped(juice: buttonAndJuice[sender]!)
+            .receive(on: DispatchQueue.main)
+            .sink { finished in
+                if finished == .failure(.notEnoughFruit) {
+                    print(finished)
+                }
+            } receiveValue: { juiceName in
+                print(juiceName)
+            }
+            .store(in: &cancellBag)
     }
     
     // MARK: - View, Model Binding
@@ -176,5 +186,4 @@ final class OrderViewController: UIViewController {
         }
         .store(in: &cancellBag)
     }
-    
 }

@@ -8,10 +8,18 @@
 import Combine
 
 final class OrderViewModel {
-    let juiceMaker = JuiceMaker()
-    
-    func orderButtonTapped(Juice: Juice) {
-        
+    private(set) var juiceMaker = JuiceMaker()
+
+    func orderButtonTapped(juice: Juice) -> AnyPublisher<String, StockError> {
+        return Future<String, StockError> { [weak self] promise in
+            do {
+                try self?.juiceMaker.make(juice: juice)
+                promise(.success(juice.rawValue))
+            } catch {
+                promise(.failure(.notEnoughFruit))
+            }
+        }
+        .eraseToAnyPublisher()
     }
     
     var publishFruitStock: AnyPublisher<[Fruit: Int], Never> {
