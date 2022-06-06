@@ -127,8 +127,7 @@ final class OrderViewController: UIViewController, Alertable {
         view.addSubview(bottomButtonStackView)
         
         fruitStockStackView.snp.makeConstraints{
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(50)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(50)
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(50)
         }
         
         topButtonStackView.snp.makeConstraints{

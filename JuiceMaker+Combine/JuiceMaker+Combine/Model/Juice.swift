@@ -17,7 +17,7 @@ enum Juice: String {
     var recipe: [Fruit: Int] {
         switch self {
         case .strawberry:
-            return [.strawberry: 6]
+            return [.strawberry: 16]
         case .banana:
             return [.banana: 2]
         case .kiwi:
