@@ -82,11 +82,15 @@ final class StockViewController: UIViewController {
     private let viewModel = FruitViewModel()
     private var cancellBag = Set<AnyCancellable>()
     
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
         bind()
     }
+    
+    // MARK: - SetUp
     
     private func setUp() {
         setView()
@@ -123,9 +127,11 @@ final class StockViewController: UIViewController {
     }
     
     @objc private func stepperDidTapped(sender: UIStepper) {
-        // MARK: - empty
-        print(sender.value)
+        viewModel
+            .fruitStepperTapped(fruit: stepperAndFruit[sender]!, amount: Int(sender.value))
     }
+    
+    // MARK: - View, Model Binding
     
     private func bind() {
         viewModel

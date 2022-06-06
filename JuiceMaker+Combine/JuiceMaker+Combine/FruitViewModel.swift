@@ -22,6 +22,10 @@ final class FruitViewModel {
         .eraseToAnyPublisher()
     }
     
+    func fruitStepperTapped(fruit: Fruit, amount: Int) {
+        juiceMaker.fruitStore.changeStock(of: fruit, to: amount)
+    }
+    
     var publishFruitStock: AnyPublisher<[Fruit: Int], Never> {
         return juiceMaker.fruitStore.$stocks.eraseToAnyPublisher()
     }

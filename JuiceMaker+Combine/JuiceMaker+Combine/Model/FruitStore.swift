@@ -26,14 +26,16 @@ class FruitStore {
         }
     }
     
-    func changeStock(of fruit: Fruit, by amount: Int, isAdd: Bool = true) {
+    func changeStock(of fruit: Fruit, by amount: Int) {
         guard let fruitCount = stocks[fruit] else { return }
         
-        if isAdd {
-            stocks[fruit] = fruitCount + amount
-        } else {
-            stocks[fruit] = fruitCount - amount
-        }
+        stocks[fruit] = fruitCount - amount
+    }
+    
+    func changeStock(of fruit: Fruit, to amount: Int) {
+        guard amount >= 0 else { return }
+        
+        stocks[fruit] = amount
     }
 }
 

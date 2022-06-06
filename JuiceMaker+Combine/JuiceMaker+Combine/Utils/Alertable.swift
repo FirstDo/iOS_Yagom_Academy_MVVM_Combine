@@ -21,14 +21,14 @@ extension Alertable {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         if let okAction = okAction {
-            let okAlert = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+            let okAlert = UIAlertAction(title: "확인", style: .default) { _ in
                 okAction()
             }
             alert.addAction(okAlert)
         }
         
         if let cancelAction = cancelAction {
-            let cancelAlert = UIAlertAction(title: "취소", style: .default) { [weak self] _ in
+            let cancelAlert = UIAlertAction(title: "취소", style: .default) { _ in
                 cancelAction()
             }
             alert.addAction(cancelAlert)
