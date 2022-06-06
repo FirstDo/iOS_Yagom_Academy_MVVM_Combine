@@ -21,6 +21,7 @@
 		94744BFD284E49A70093CE6E /* CustomInitalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BFC284E49A70093CE6E /* CustomInitalizer.swift */; };
 		94744C01284E7DDA0093CE6E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C00284E7DDA0093CE6E /* OrderViewModel.swift */; };
 		94744C03284E933D0093CE6E /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C02284E933C0093CE6E /* Alertable.swift */; };
+		94744C07284E97EF0093CE6E /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C06284E97EF0093CE6E /* StockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		94744BFC284E49A70093CE6E /* CustomInitalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInitalizer.swift; sourceTree = "<group>"; };
 		94744C00284E7DDA0093CE6E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		94744C02284E933C0093CE6E /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		94744C06284E97EF0093CE6E /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +77,8 @@
 				94744BFE284E49C40093CE6E /* Scene */,
 				94744BFA284E49760093CE6E /* Utils */,
 				94744BEE284E2C1F0093CE6E /* Model */,
-				94744BF1284E2D090093CE6E /* FruitStore.swift */,
-				94744BF5284E318E0093CE6E /* JuiceMaker.swift */,
-				94744BD9284E28B10093CE6E /* OrderViewController.swift */,
-				94744C00284E7DDA0093CE6E /* OrderViewModel.swift */,
+				94744C04284E97AB0093CE6E /* OrderView */,
+				94744C05284E97C10093CE6E /* StockView */,
 				94744BDE284E28B30093CE6E /* Assets.xcassets */,
 				94744BE0284E28B30093CE6E /* LaunchScreen.storyboard */,
 				94744BE3284E28B30093CE6E /* Info.plist */,
@@ -92,6 +92,8 @@
 				94744BEC284E2B540093CE6E /* Fruit.swift */,
 				94744BEF284E2CCB0093CE6E /* Juice.swift */,
 				94744BF3284E30FF0093CE6E /* StockError.swift */,
+				94744BF1284E2D090093CE6E /* FruitStore.swift */,
+				94744BF5284E318E0093CE6E /* JuiceMaker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,6 +114,23 @@
 				94744BD5284E28B10093CE6E /* AppDelegate.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		94744C04284E97AB0093CE6E /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				94744BD9284E28B10093CE6E /* OrderViewController.swift */,
+				94744C00284E7DDA0093CE6E /* OrderViewModel.swift */,
+			);
+			path = OrderView;
+			sourceTree = "<group>";
+		};
+		94744C05284E97C10093CE6E /* StockView */ = {
+			isa = PBXGroup;
+			children = (
+				94744C06284E97EF0093CE6E /* StockViewController.swift */,
+			);
+			path = StockView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +216,7 @@
 				94744BF6284E318E0093CE6E /* JuiceMaker.swift in Sources */,
 				94744BF2284E2D090093CE6E /* FruitStore.swift in Sources */,
 				94744BD6284E28B10093CE6E /* AppDelegate.swift in Sources */,
+				94744C07284E97EF0093CE6E /* StockViewController.swift in Sources */,
 				94744C01284E7DDA0093CE6E /* OrderViewModel.swift in Sources */,
 				94744C03284E933D0093CE6E /* Alertable.swift in Sources */,
 				94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */,
