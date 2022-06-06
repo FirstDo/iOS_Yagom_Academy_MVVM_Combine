@@ -18,6 +18,25 @@ enum Const {
 }
 
 final class OrderViewController: UIViewController {
+    private lazy var contentStackView: UIStackView = {
+        
+        let strawBerryStackView = UIStackView(arrangedSubviews: [strawberryLabel, strawberryStockLabel], axis: .vertical)
+        let bananaStackView = UIStackView(arrangedSubviews: [bananaLabel, bananaStockLabel], axis: .vertical)
+        let pineappleStackView = UIStackView(arrangedSubviews: [pineappleLabel, pineappleStockLabel], axis: .vertical)
+        let kiwiStackView = UIStackView(arrangedSubviews: [kiwiLabel, kiwiStockLabel], axis: .vertical)
+        let mangoStackView = UIStackView(arrangedSubviews: [mangoLabel, mangoStockLabel], axis: .vertical)
+        
+        let fruitStockStackView = UIStackView(arrangedSubviews: [strawBerryStackView, bananaStackView, pineappleStackView, kiwiStackView, mangoStackView])
+        
+        let topStackView = UIStackView(arrangedSubviews: [strawberryBananaButton, mangoKiwiButton])
+        let bottomStackView = UIStackView(arrangedSubviews: [strawberryButton, bananaButton, pineappleButton, kiwiButton, mangoButton])
+        
+        let stackview = UIStackView(arrangedSubviews: [fruitStockStackView, topStackView, bottomStackView], axis: .vertical)
+        stackview.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stackview
+    }()
+    
     private let strawberryLabel = UILabel(alignment: .center, text: Const.Fruit.strawberry)
     private let bananaLabel = UILabel(alignment: .center, text: Const.Fruit.banana)
     private let pineappleLabel = UILabel(alignment: .center, text: Const.Fruit.pineapple)
@@ -56,10 +75,21 @@ final class OrderViewController: UIViewController {
     }
     
     private func setUp() {
+        setView()
+        setLayout()
         setNavigation()
         setOrderButton()
     }
-
+    
+    private func setView() {
+        view.backgroundColor = .systemBackground
+        
+    }
+    
+    private func setLayout() {
+        view.addSubview(contentStackView)
+    }
+    
     private func setNavigation() {
         navigationItem.title = "맛있는 쥬스를 만들어 드려요!"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "재고수정", style: .plain, target: self, action: #selector(rightBarButtonTapped))
@@ -95,5 +125,12 @@ extension UIButton {
     convenience init(title: String? = nil) {
         self.init()
         self.setTitle(title, for: .normal)
+    }
+}
+
+extension UIStackView {
+    convenience init(arrangedSubviews : [UIView], axis: NSLayoutConstraint.Axis) {
+        self.init(arrangedSubviews: arrangedSubviews)
+        self.axis = axis
     }
 }
