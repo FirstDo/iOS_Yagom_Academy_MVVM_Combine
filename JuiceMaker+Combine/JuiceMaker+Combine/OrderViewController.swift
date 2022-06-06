@@ -97,7 +97,7 @@ final class OrderViewController: UIViewController, Alertable {
         .mango: mangoStockLabel
     ]
     
-    private let viewModel = OrderViewModel()
+    private let viewModel = FruitViewModel()
     private var cancellBag = Set<AnyCancellable>()
     
     // MARK: - View Life Cycle
@@ -164,7 +164,6 @@ final class OrderViewController: UIViewController, Alertable {
     private func juiceOrderButtonTapped(sender: UIButton) {
         viewModel
             .orderButtonTapped(juice: buttonAndJuice[sender]!)
-            .receive(on: DispatchQueue.main)
             .sink { [weak self] finished in
                 if finished == .failure(.notEnoughFruit) {
                     self?.show(

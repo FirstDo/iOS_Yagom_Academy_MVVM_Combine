@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 final class StockViewController: UIViewController {
     private lazy var fruitStockStackView: UIStackView = {
@@ -70,9 +71,21 @@ final class StockViewController: UIViewController {
         mangoStepper: .mango
     ]
     
+    private lazy var fruitAndStepper: [Fruit: UIStepper] = [
+        .strawberry: strawberryStepper,
+        .banana: bananaStepper,
+        .pineapple: pineappleStepper,
+        .kiwi: kiwiStepper,
+        .mango: mangoStepper
+    ]
+    
+    private let viewModel = FruitViewModel()
+    private var cancellBag = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        bind()
     }
     
     private func setUp() {
@@ -111,5 +124,18 @@ final class StockViewController: UIViewController {
     
     @objc private func stepperDidTapped(sender: UIStepper) {
         // MARK: - empty
+        print(sender.value)
+    }
+    
+    private func bind() {
+        viewModel
+            .publishFruitStock
+            .sink { [weak self] stocks in
+                for (fruit, amount) in stocks {
+                    self?.fruitAndLabel[fruit]?.text = "\(amount)"
+                    self?.fruitAndStepper[fruit]?.value = Double(amount)
+                }
+            }
+            .store(in: &cancellBag)
     }
 }

@@ -8,9 +8,11 @@
 import Combine
 
 class FruitStore {
+    static let shared = FruitStore(count: 10)
+    
     @Published var stocks: [Fruit: Int]
     
-    init(count: Int) {
+    private init(count: Int) {
         stocks = [:]
         
         Fruit.allCases.forEach { fruit in

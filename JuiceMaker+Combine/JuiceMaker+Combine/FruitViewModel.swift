@@ -1,5 +1,5 @@
 //
-//  OrderViewModel.swift
+//  FruitViewModel.swift
 //  JuiceMaker+Combine
 //
 //  Created by 김도연 on 2022/06/07.
@@ -7,7 +7,7 @@
 
 import Combine
 
-final class OrderViewModel {
+final class FruitViewModel {
     private(set) var juiceMaker = JuiceMaker()
 
     func orderButtonTapped(juice: Juice) -> AnyPublisher<String, StockError> {
