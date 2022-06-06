@@ -19,7 +19,7 @@ enum Const {
     }
 }
 
-final class OrderViewController: UIViewController {
+final class OrderViewController: UIViewController, Alertable {
     private lazy var fruitStockStackView: UIStackView = {
         let strawBerryStackView = UIStackView(arrangedSubviews: [strawberryLabel, strawberryStockLabel])
         strawBerryStackView.axis = .vertical
@@ -71,7 +71,7 @@ final class OrderViewController: UIViewController {
     private let kiwiStockLabel = UILabel(alignment: .center, text: "0")
     private let mangoStockLabel = UILabel(alignment: .center, text: "0")
     
-    private let strawberryBananaButton = UIButton(title: "딸기쥬스 주문")
+    private let strawberryBananaButton = UIButton(title: "딸바쥬스 주문")
     private let mangoKiwiButton = UIButton(title: "망키쥬스 주문")
     private let strawberryButton = UIButton(title: "딸기쥬스 주문")
     private let bananaButton = UIButton(title: "바나나쥬스 주문")
@@ -166,12 +166,19 @@ final class OrderViewController: UIViewController {
         viewModel
             .orderButtonTapped(juice: buttonAndJuice[sender]!)
             .receive(on: DispatchQueue.main)
-            .sink { finished in
+            .sink { [weak self] finished in
                 if finished == .failure(.notEnoughFruit) {
-                    print(finished)
+                    self?.show(
+                        message: "재료가 모자라요. 재고를 수정할까요?",
+                        okAction: {},
+                        cancelAction: {}
+                    )
                 }
-            } receiveValue: { juiceName in
-                print(juiceName)
+            } receiveValue: { [weak self] juiceName in
+                self?.show(
+                    message: "\(juiceName) 나왔습니다! 맛있게 드세요!",
+                    okAction: {}
+                )
             }
             .store(in: &cancellBag)
     }
@@ -179,11 +186,13 @@ final class OrderViewController: UIViewController {
     // MARK: - View, Model Binding
     
     private func bind() {
-        viewModel.publishFruitStock.sink { [weak self] stocks in
-            for (fruit, amount) in stocks {
-                self?.fruitAndLabel[fruit]?.text = "\(amount)"
+        viewModel
+            .publishFruitStock
+            .sink { [weak self] stocks in
+                for (fruit, amount) in stocks {
+                    self?.fruitAndLabel[fruit]?.text = "\(amount)"
+                }
             }
-        }
-        .store(in: &cancellBag)
+            .store(in: &cancellBag)
     }
 }
