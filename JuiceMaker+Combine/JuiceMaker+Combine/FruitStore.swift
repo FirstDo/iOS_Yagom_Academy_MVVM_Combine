@@ -6,7 +6,7 @@
 //
 
 struct FruitStore {
-    private(set) var stocks: [Fruit: Int]
+    private var stocks: [Fruit: Int]
     
     init(count: Int) {
         stocks = [:]
@@ -16,19 +16,19 @@ struct FruitStore {
         }
     }
     
-    mutating func changeStock(of fruit: Fruit, by count: Int, isAdd: Bool = true) throws {
-        guard let fruitCount = stocks[fruit] else {
-            return
+    mutating func checkStock(of fruit: Fruit, amount: Int) throws {
+        guard let fruitCount = stocks[fruit], fruitCount >= amount else {
+            throw StockError.notEnoughFruit
         }
+    }
+    
+    mutating func changeStock(of fruit: Fruit, by amount: Int, isAdd: Bool = true) {
+        guard let fruitCount = stocks[fruit] else { return }
         
         if isAdd {
-            stocks[fruit] = fruitCount + count
+            stocks[fruit] = fruitCount + amount
         } else {
-            guard fruitCount - count >= 0 else {
-                throw StockError.notEnoughFruit
-            }
-            
-            stocks[fruit] = fruitCount - count
+            stocks[fruit] = fruitCount - amount
         }
     }
 }
