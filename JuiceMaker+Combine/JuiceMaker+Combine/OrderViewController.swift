@@ -79,14 +79,22 @@ final class OrderViewController: UIViewController {
     private let kiwiButton = UIButton(title: "키위쥬스 주문")
     private let mangoButton = UIButton(title: "망고쥬스 주문")
     
-    private lazy var juiceOrderButtons = [
-        strawberryBananaButton,
-        mangoKiwiButton,
-        strawberryButton,
-        bananaButton,
-        pineappleButton,
-        kiwiButton,
-        mangoButton
+    private lazy var buttonAndJuice: [UIButton: Juice] = [
+        strawberryBananaButton: .strawberryBanana,
+        mangoKiwiButton: .mangoKiwi,
+        strawberryButton: .strawberry,
+        bananaButton: .banana,
+        pineappleButton: .pineapple,
+        kiwiButton: .kiwi,
+        mangoButton: .mango
+    ]
+    
+    private lazy var fruitAndLabel: [Fruit: UILabel] = [
+        .strawberry: strawberryStockLabel,
+        .banana: bananaStockLabel,
+        .pineapple: pineappleStockLabel,
+        .kiwi: kiwiStockLabel,
+        .mango: mangoStockLabel
     ]
     
     private let viewModel = OrderViewModel()
@@ -148,7 +156,7 @@ final class OrderViewController: UIViewController {
     }
     
     private func setOrderButton() {
-        juiceOrderButtons.forEach { button in
+        buttonAndJuice.keys.forEach { button in
             button.addTarget(self, action: #selector(juiceOrderButtonTapped(sender:)), for: .touchUpInside)
         }
     }
@@ -163,18 +171,7 @@ final class OrderViewController: UIViewController {
     private func bind() {
         viewModel.publishFruitStock.sink { [weak self] stocks in
             for (fruit, amount) in stocks {
-                switch fruit {
-                case .strawberry:
-                    self?.strawberryStockLabel.text = "\(amount)"
-                case .mango:
-                    self?.mangoStockLabel.text = "\(amount)"
-                case .kiwi:
-                    self?.kiwiStockLabel.text = "\(amount)"
-                case .pineapple:
-                    self?.pineappleStockLabel.text = "\(amount)"
-                case .banana:
-                    self?.bananaStockLabel.text = "\(amount)"
-                }
+                self?.fruitAndLabel[fruit]?.text = "\(amount)"
             }
         }
         .store(in: &cancellBag)
