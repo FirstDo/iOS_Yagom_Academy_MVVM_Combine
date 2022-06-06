@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 extension UIColor {
     static let number = UIColor.systemGray
@@ -14,6 +15,39 @@ extension UIColor {
 }
 
 final class CalculatorViewController: UIViewController {
+    private let logScrollView: UIScrollView = {
+        let scrollview = UIScrollView()
+        
+        return scrollview
+    }()
+    
+    private let logStackView: UIStackView = {
+        let stackview = UIStackView()
+        
+        return stackview
+    }()
+    
+    private lazy var inputStackView: UIStackView = {
+        let stackview = UIStackView(arrangedSubviews: [operatorLabel, numberLabel])
+        
+        return stackview
+    }()
+    
+    private let operatorLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        
+        return label
+    }()
+    
+    private let numberLabel: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.textColor = .white
+        
+        return label
+    }()
+    
     private lazy var touchPadStackView: UIStackView = {
         let stackview = UIStackView(arrangedSubviews: [
             firstNumberStackView,
@@ -24,6 +58,7 @@ final class CalculatorViewController: UIViewController {
         ])
         stackview.axis = .vertical
         stackview.distribution = .fillEqually
+        stackview.spacing = 8
         
         return stackview
     }()
@@ -31,6 +66,7 @@ final class CalculatorViewController: UIViewController {
     private lazy var firstNumberStackView: UIStackView = {
         let stackview = UIStackView(arrangedSubviews: [acButton, ceButton, signButton, divideButton])
         stackview.distribution = .fillEqually
+        stackview.spacing = 8
         
         return stackview
     }()
@@ -38,6 +74,7 @@ final class CalculatorViewController: UIViewController {
     private lazy var secondNumberStackView: UIStackView = {
         let stackview = UIStackView(arrangedSubviews: [sevenButton, eightButton, nineButton, multiplyButton])
         stackview.distribution = .fillEqually
+        stackview.spacing = 8
         
         return stackview
     }()
@@ -45,6 +82,7 @@ final class CalculatorViewController: UIViewController {
     private lazy var thirdNumberStackView: UIStackView = {
         let stackview = UIStackView(arrangedSubviews: [fourButton, fiveButton, sixButton, substractButton])
         stackview.distribution = .fillEqually
+        stackview.spacing = 8
         
         return stackview
     }()
@@ -52,6 +90,7 @@ final class CalculatorViewController: UIViewController {
     private lazy var fourthNumberStackView: UIStackView = {
         let stackview = UIStackView(arrangedSubviews: [oneButton, twoButton, threeButton, plusButton])
         stackview.distribution = .fillEqually
+        stackview.spacing = 8
         
         return stackview
     }()
@@ -59,6 +98,7 @@ final class CalculatorViewController: UIViewController {
     private lazy var fifthNumberStackView: UIStackView = {
         let stackview = UIStackView(arrangedSubviews: [zeroButton, twoZeroButton, dotButton, equalButton])
         stackview.distribution = .fillEqually
+        stackview.spacing = 8
         
         return stackview
     }()
@@ -257,7 +297,35 @@ final class CalculatorViewController: UIViewController {
     }
     
     private func setLayout() {
+        view.addSubview(logScrollView)
+        logScrollView.addSubview(logStackView)
+        view.addSubview(inputStackView)
+        view.addSubview(touchPadStackView)
         
+        logScrollView.snp.makeConstraints {
+            $0.top.greaterThanOrEqualTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(30)
+        }
+        
+        logStackView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+        }
+        
+        inputStackView.snp.makeConstraints {
+            $0.top.equalTo(logStackView.snp.bottom).offset(20)
+            $0.leading.trailing.equalTo(logScrollView)
+        }
+        
+        acButton.snp.makeConstraints {
+            $0.width.equalTo(acButton.snp.height)
+        }
+        
+        touchPadStackView.snp.makeConstraints {
+            $0.top.equalTo(inputStackView.snp.bottom).offset(20)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            $0.leading.trailing.equalTo(logScrollView)
+        }
     }
 }
 
