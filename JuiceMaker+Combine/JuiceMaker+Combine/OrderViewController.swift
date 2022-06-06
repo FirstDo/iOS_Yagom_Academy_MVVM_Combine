@@ -38,9 +38,34 @@ final class OrderViewController: UIViewController {
     private let kiwiButton = UIButton(title: "키위쥬스 주문")
     private let mangoButton = UIButton(title: "망고쥬스 주문")
     
+    private lazy var juiceOrderButtons = [
+        strawberryBananaButton,
+        mangoKiwiButton,
+        strawberryButton,
+        bananaButton,
+        pineappleButton,
+        kiwiButton,
+        mangoButton
+    ]
+    
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+            addTargetToOrderButton()
     }
+
+    private func addTargetToOrderButton() {
+        juiceOrderButtons.forEach { button in
+            button.addTarget(self, action: #selector(juiceOrderButtonTapped(sender:)), for: .touchUpInside)
+        }
+    }
+    
+    @objc
+    private func juiceOrderButtonTapped(sender: UIButton) {
+        // MARK: - empty
+    }
+    
 }
 
 extension UILabel {
