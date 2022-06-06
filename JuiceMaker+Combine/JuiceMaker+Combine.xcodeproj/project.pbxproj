@@ -19,6 +19,7 @@
 		94744BF6284E318E0093CE6E /* JuiceMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BF5284E318E0093CE6E /* JuiceMaker.swift */; };
 		94744BF9284E490D0093CE6E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 94744BF8284E490D0093CE6E /* SnapKit */; };
 		94744BFD284E49A70093CE6E /* CustomInitalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BFC284E49A70093CE6E /* CustomInitalizer.swift */; };
+		94744C01284E7DDA0093CE6E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C00284E7DDA0093CE6E /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		94744BF3284E30FF0093CE6E /* StockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockError.swift; sourceTree = "<group>"; };
 		94744BF5284E318E0093CE6E /* JuiceMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMaker.swift; sourceTree = "<group>"; };
 		94744BFC284E49A70093CE6E /* CustomInitalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInitalizer.swift; sourceTree = "<group>"; };
+		94744C00284E7DDA0093CE6E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				94744BF1284E2D090093CE6E /* FruitStore.swift */,
 				94744BF5284E318E0093CE6E /* JuiceMaker.swift */,
 				94744BD9284E28B10093CE6E /* OrderViewController.swift */,
+				94744C00284E7DDA0093CE6E /* OrderViewModel.swift */,
 				94744BDE284E28B30093CE6E /* Assets.xcassets */,
 				94744BE0284E28B30093CE6E /* LaunchScreen.storyboard */,
 				94744BE3284E28B30093CE6E /* Info.plist */,
@@ -191,6 +194,7 @@
 				94744BF6284E318E0093CE6E /* JuiceMaker.swift in Sources */,
 				94744BF2284E2D090093CE6E /* FruitStore.swift in Sources */,
 				94744BD6284E28B10093CE6E /* AppDelegate.swift in Sources */,
+				94744C01284E7DDA0093CE6E /* OrderViewModel.swift in Sources */,
 				94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */,
 				94744BF0284E2CCB0093CE6E /* Juice.swift in Sources */,
 			);

@@ -5,12 +5,12 @@
 //  Created by 김도연 on 2022/06/06.
 //
 
+import Combine
+
 class FruitStore {
-    static let shared = FruitStore(count: 10)
+    @Published var stocks: [Fruit: Int]
     
-    private var stocks: [Fruit: Int]
-    
-    private init(count: Int) {
+    init(count: Int) {
         stocks = [:]
         
         Fruit.allCases.forEach { fruit in

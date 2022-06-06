@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 import SnapKit
 
 enum Const {
@@ -88,12 +89,18 @@ final class OrderViewController: UIViewController {
         mangoButton
     ]
     
+    private let viewModel = OrderViewModel()
+    private var cancellBag = Set<AnyCancellable>()
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        bind()
     }
+    
+    // MARK: - SetUp
     
     private func setUp() {
         setView()
@@ -149,6 +156,28 @@ final class OrderViewController: UIViewController {
     @objc
     private func juiceOrderButtonTapped(sender: UIButton) {
         // MARK: - empty
+    }
+    
+    // MARK: - View, Model Binding
+    
+    private func bind() {
+        viewModel.publishFruitStock.sink { [weak self] stocks in
+            for (fruit, amount) in stocks {
+                switch fruit {
+                case .strawberry:
+                    self?.strawberryStockLabel.text = "\(amount)"
+                case .mango:
+                    self?.mangoStockLabel.text = "\(amount)"
+                case .kiwi:
+                    self?.kiwiStockLabel.text = "\(amount)"
+                case .pineapple:
+                    self?.pineappleStockLabel.text = "\(amount)"
+                case .banana:
+                    self?.bananaStockLabel.text = "\(amount)"
+                }
+            }
+        }
+        .store(in: &cancellBag)
     }
     
 }

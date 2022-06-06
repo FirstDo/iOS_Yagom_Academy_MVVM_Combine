@@ -6,7 +6,7 @@
 //
 
 struct JuiceMaker {
-    private let fruitStore = FruitStore.shared
+    let fruitStore = FruitStore(count: 10)
     
     mutating func make(juice: Juice) throws {
         try canMake(juice)
