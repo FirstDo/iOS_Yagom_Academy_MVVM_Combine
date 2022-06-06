@@ -5,10 +5,12 @@
 //  Created by 김도연 on 2022/06/06.
 //
 
-struct FruitStore {
+class FruitStore {
+    static let shared = FruitStore(count: 10)
+    
     private var stocks: [Fruit: Int]
     
-    init(count: Int) {
+    private init(count: Int) {
         stocks = [:]
         
         Fruit.allCases.forEach { fruit in
@@ -16,13 +18,13 @@ struct FruitStore {
         }
     }
     
-    mutating func checkStock(of fruit: Fruit, amount: Int) throws {
+    func checkStock(of fruit: Fruit, amount: Int) throws {
         guard let fruitCount = stocks[fruit], fruitCount >= amount else {
             throw StockError.notEnoughFruit
         }
     }
     
-    mutating func changeStock(of fruit: Fruit, by amount: Int, isAdd: Bool = true) {
+    func changeStock(of fruit: Fruit, by amount: Int, isAdd: Bool = true) {
         guard let fruitCount = stocks[fruit] else { return }
         
         if isAdd {

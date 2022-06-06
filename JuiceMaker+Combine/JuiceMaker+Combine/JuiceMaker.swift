@@ -6,20 +6,20 @@
 //
 
 struct JuiceMaker {
-    private var fruitStore = FruitStore(count: 10)
+    private let fruitStore = FruitStore.shared
     
     mutating func make(juice: Juice) throws {
         try canMake(juice)
         deleteStock(for: juice)
     }
     
-    mutating func canMake(_ juice: Juice) throws {
+    mutating private func canMake(_ juice: Juice) throws {
         for (fruit, amount) in juice.recipe {
             try fruitStore.checkStock(of: fruit, amount: amount)
         }
     }
     
-    mutating func deleteStock(for juice: Juice) {
+    mutating private func deleteStock(for juice: Juice) {
         for (fruit, amount) in juice.recipe {
             fruitStore.changeStock(of: fruit, by: amount, isAdd: false)
         }
