@@ -52,10 +52,25 @@ final class OrderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            addTargetToOrderButton()
+        setUp()
+    }
+    
+    private func setUp() {
+        setNavigation()
+        setOrderButton()
     }
 
-    private func addTargetToOrderButton() {
+    private func setNavigation() {
+        navigationItem.title = "맛있는 쥬스를 만들어 드려요!"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "재고수정", style: .plain, target: self, action: #selector(rightBarButtonTapped))
+    }
+    
+    @objc
+    private func rightBarButtonTapped() {
+        // MARK: - empty
+    }
+    
+    private func setOrderButton() {
         juiceOrderButtons.forEach { button in
             button.addTarget(self, action: #selector(juiceOrderButtonTapped(sender:)), for: .touchUpInside)
         }
