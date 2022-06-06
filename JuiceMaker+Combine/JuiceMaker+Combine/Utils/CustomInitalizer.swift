@@ -12,6 +12,8 @@ extension UILabel {
         self.init()
         self.textAlignment = alignment
         self.text = text
+        self.textColor = .label
+        self.font = .preferredFont(forTextStyle: .largeTitle)
     }
 }
 
@@ -19,12 +21,7 @@ extension UIButton {
     convenience init(title: String? = nil) {
         self.init()
         self.setTitle(title, for: .normal)
-    }
-}
-
-extension UIStackView {
-    convenience init(arrangedSubviews : [UIView], axis: NSLayoutConstraint.Axis) {
-        self.init(arrangedSubviews: arrangedSubviews)
-        self.axis = axis
+        self.setTitleColor(.systemBackground, for: .normal)
+        self.backgroundColor = .systemBlue
     }
 }
