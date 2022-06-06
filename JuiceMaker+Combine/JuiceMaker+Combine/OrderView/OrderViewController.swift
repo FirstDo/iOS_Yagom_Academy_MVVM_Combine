@@ -152,7 +152,7 @@ final class OrderViewController: UIViewController, Alertable {
     
     @objc
     private func rightBarButtonTapped() {
-        // MARK: - empty
+        present(UINavigationController(rootViewController: StockViewController()), animated: true)
     }
     
     private func setOrderButton() {
@@ -170,7 +170,7 @@ final class OrderViewController: UIViewController, Alertable {
                 if finished == .failure(.notEnoughFruit) {
                     self?.show(
                         message: "재료가 모자라요. 재고를 수정할까요?",
-                        okAction: {},
+                        okAction: { self?.present(UINavigationController(rootViewController: StockViewController()), animated: true) },
                         cancelAction: {}
                     )
                 }

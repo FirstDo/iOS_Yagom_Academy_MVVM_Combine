@@ -10,5 +10,14 @@ import UIKit
 final class StockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
+    }
+    
+    private func setUp() {
+        setView()
+    }
+    
+    private func setView() {
+        view.backgroundColor = .systemBackground
     }
 }
