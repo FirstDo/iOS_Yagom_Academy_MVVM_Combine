@@ -281,15 +281,21 @@ final class CalculatorViewController: UIViewController {
         
         return button
     }()
+    
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        bind()
     }
+    
+    // MARK: - SetUp
     
     private func setUp() {
         setView()
         setLayout()
+        setButtonTarget()
     }
     
     private func setView() {
@@ -326,6 +332,77 @@ final class CalculatorViewController: UIViewController {
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
             $0.leading.trailing.equalTo(logScrollView)
         }
+    }
+    
+    private func setButtonTarget() {
+        [oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, sevenButton, eightButton, nineButton]
+            .forEach { button in
+                button.addTarget(self, action: #selector(numberButtonDidTapped(sender:)), for: .touchUpInside)
+            }
+        
+        [zeroButton, twoZeroButton]
+            .forEach { button in
+                button.addTarget(self, action: #selector(zeroButtonDidTapped(sender:)), for: .touchUpInside)
+            }
+        
+        [plusButton, substractButton, multiplyButton, divideButton]
+            .forEach { button in
+                button.addTarget(self, action: #selector(operatorButtonDidTapped(sender:)), for: .touchUpInside)
+            }
+        
+        dotButton.addTarget(self, action: #selector(dotButtonDidTapped(sender:)), for: .touchUpInside)
+        
+        acButton.addTarget(self, action: #selector(acButtonDidTapped(sender:)), for: .touchUpInside)
+        ceButton.addTarget(self, action: #selector(ceButtonDidTapped(sender:)), for: .touchUpInside)
+        signButton.addTarget(self, action: #selector(signButtonDidTapped(sender:)), for: .touchUpInside)
+        
+        equalButton.addTarget(self, action: #selector(equalButtonDidTapped(sender:)), for: .touchUpInside)
+    }
+    
+    // MARK: - View, Model Binding
+    
+    @objc
+    private func numberButtonDidTapped(sender: UIButton) {
+        // empty
+    }
+    
+    @objc
+    private func zeroButtonDidTapped(sender: UIButton) {
+        // empty
+    }
+    
+    @objc
+    private func operatorButtonDidTapped(sender: UIButton) {
+        // empty
+    }
+    
+    @objc
+    private func dotButtonDidTapped(sender: UIButton) {
+        // empty
+    }
+    
+    @objc
+    private func acButtonDidTapped(sender: UIButton) {
+        // empty
+    }
+    
+    @objc
+    private func ceButtonDidTapped(sender: UIButton) {
+        // empty
+    }
+    
+    @objc
+    private func signButtonDidTapped(sender: UIButton) {
+        // empty
+    }
+    
+    @objc
+    private func equalButtonDidTapped(sender: UIButton) {
+        // empty
+    }
+    
+    private func bind() {
+        
     }
 }
 
