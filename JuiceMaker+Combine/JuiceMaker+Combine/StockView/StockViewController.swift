@@ -54,6 +54,22 @@ final class StockViewController: UIViewController {
     private let kiwiStepper = UIStepper()
     private let mangoStepper = UIStepper()
     
+    private lazy var fruitAndLabel: [Fruit: UILabel] = [
+        .strawberry: strawberryStockLabel,
+        .banana: bananaStockLabel,
+        .pineapple: pineappleStockLabel,
+        .kiwi: kiwiStockLabel,
+        .mango: mangoStockLabel
+    ]
+    
+    private lazy var stepperAndFruit: [UIStepper: Fruit] = [
+        strawberryStepper: .strawberry,
+        bananaStepper: .banana,
+        pineappleStepper: .pineapple,
+        kiwiStepper: .kiwi,
+        mangoStepper: .mango
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -62,6 +78,8 @@ final class StockViewController: UIViewController {
     private func setUp() {
         setView()
         setLayout()
+        setNavigation()
+        setStepper()
     }
     
     private func setView() {
@@ -74,5 +92,24 @@ final class StockViewController: UIViewController {
         fruitStockStackView.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
+    }
+    
+    private func setNavigation() {
+        navigationItem.title = "재고 추가"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(closeButtonTapped))
+    }
+    
+    @objc private func closeButtonTapped() {
+        dismiss(animated: true)
+    }
+    
+    private func setStepper() {
+        stepperAndFruit.keys.forEach { stepper in
+            stepper.addTarget(self, action: #selector(stepperDidTapped(sender:)), for: .valueChanged)
+        }
+    }
+    
+    @objc private func stepperDidTapped(sender: UIStepper) {
+        // MARK: - empty
     }
 }
