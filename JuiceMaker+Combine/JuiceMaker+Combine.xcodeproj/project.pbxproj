@@ -17,6 +17,7 @@
 		94744BF2284E2D090093CE6E /* FruitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BF1284E2D090093CE6E /* FruitStore.swift */; };
 		94744BF4284E30FF0093CE6E /* StockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BF3284E30FF0093CE6E /* StockError.swift */; };
 		94744BF6284E318E0093CE6E /* JuiceMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BF5284E318E0093CE6E /* JuiceMaker.swift */; };
+		94744BF9284E490D0093CE6E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 94744BF8284E490D0093CE6E /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94744BF9284E490D0093CE6E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +105,9 @@
 			dependencies = (
 			);
 			name = "JuiceMaker+Combine";
+			packageProductDependencies = (
+				94744BF8284E490D0093CE6E /* SnapKit */,
+			);
 			productName = "JuiceMaker+Combine";
 			productReference = 94744BD2284E28B10093CE6E /* JuiceMaker+Combine.app */;
 			productType = "com.apple.product-type.application";
@@ -131,6 +136,9 @@
 				Base,
 			);
 			mainGroup = 94744BC9284E28B10093CE6E;
+			packageReferences = (
+				94744BF7284E490B0093CE6E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 94744BD3284E28B10093CE6E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -372,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		94744BF7284E490B0093CE6E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		94744BF8284E490D0093CE6E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94744BF7284E490B0093CE6E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 94744BCA284E28B10093CE6E /* Project object */;
 }
