@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94744BD6284E28B10093CE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD5284E28B10093CE6E /* AppDelegate.swift */; };
+		94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD7284E28B10093CE6E /* SceneDelegate.swift */; };
+		94744BDA284E28B10093CE6E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD9284E28B10093CE6E /* OrderViewController.swift */; };
+		94744BDF284E28B30093CE6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94744BDE284E28B30093CE6E /* Assets.xcassets */; };
+		94744BE2284E28B30093CE6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94744BE0284E28B30093CE6E /* LaunchScreen.storyboard */; };
+		94744BED284E2B540093CE6E /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BEC284E2B540093CE6E /* Fruit.swift */; };
+		94744BF0284E2CCB0093CE6E /* Juice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BEF284E2CCB0093CE6E /* Juice.swift */; };
+		94744BF2284E2D090093CE6E /* FruitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BF1284E2D090093CE6E /* FruitStore.swift */; };
+		94744BF4284E30FF0093CE6E /* StockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BF3284E30FF0093CE6E /* StockError.swift */; };
+		94744BF6284E318E0093CE6E /* JuiceMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BF5284E318E0093CE6E /* JuiceMaker.swift */; };
+		94744BF9284E490D0093CE6E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 94744BF8284E490D0093CE6E /* SnapKit */; };
+		94744BFD284E49A70093CE6E /* CustomInitalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BFC284E49A70093CE6E /* CustomInitalizer.swift */; };
+		94744C01284E7DDA0093CE6E /* FruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C00284E7DDA0093CE6E /* FruitViewModel.swift */; };
+		94744C03284E933D0093CE6E /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C02284E933C0093CE6E /* Alertable.swift */; };
+		94744C07284E97EF0093CE6E /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C06284E97EF0093CE6E /* StockViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		94744BD2284E28B10093CE6E /* JuiceMaker+Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JuiceMaker+Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94744BD5284E28B10093CE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		94744BD7284E28B10093CE6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		94744BD9284E28B10093CE6E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		94744BDE284E28B30093CE6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94744BE1284E28B30093CE6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94744BE3284E28B30093CE6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94744BEC284E2B540093CE6E /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		94744BEF284E2CCB0093CE6E /* Juice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Juice.swift; sourceTree = "<group>"; };
+		94744BF1284E2D090093CE6E /* FruitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStore.swift; sourceTree = "<group>"; };
+		94744BF3284E30FF0093CE6E /* StockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockError.swift; sourceTree = "<group>"; };
+		94744BF5284E318E0093CE6E /* JuiceMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMaker.swift; sourceTree = "<group>"; };
+		94744BFC284E49A70093CE6E /* CustomInitalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInitalizer.swift; sourceTree = "<group>"; };
+		94744C00284E7DDA0093CE6E /* FruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModel.swift; sourceTree = "<group>"; };
+		94744C02284E933C0093CE6E /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		94744C06284E97EF0093CE6E /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94744BCF284E28B10093CE6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94744BF9284E490D0093CE6E /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94744BC9284E28B10093CE6E = {
+			isa = PBXGroup;
+			children = (
+				94744BD4284E28B10093CE6E /* JuiceMaker+Combine */,
+				94744BD3284E28B10093CE6E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94744BD3284E28B10093CE6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94744BD2284E28B10093CE6E /* JuiceMaker+Combine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94744BD4284E28B10093CE6E /* JuiceMaker+Combine */ = {
+			isa = PBXGroup;
+			children = (
+				94744BFE284E49C40093CE6E /* Scene */,
+				94744BFA284E49760093CE6E /* Utils */,
+				94744BEE284E2C1F0093CE6E /* Model */,
+				94744C00284E7DDA0093CE6E /* FruitViewModel.swift */,
+				94744BD9284E28B10093CE6E /* OrderViewController.swift */,
+				94744C06284E97EF0093CE6E /* StockViewController.swift */,
+				94744BDE284E28B30093CE6E /* Assets.xcassets */,
+				94744BE0284E28B30093CE6E /* LaunchScreen.storyboard */,
+				94744BE3284E28B30093CE6E /* Info.plist */,
+			);
+			path = "JuiceMaker+Combine";
+			sourceTree = "<group>";
+		};
+		94744BEE284E2C1F0093CE6E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94744BEC284E2B540093CE6E /* Fruit.swift */,
+				94744BEF284E2CCB0093CE6E /* Juice.swift */,
+				94744BF3284E30FF0093CE6E /* StockError.swift */,
+				94744BF1284E2D090093CE6E /* FruitStore.swift */,
+				94744BF5284E318E0093CE6E /* JuiceMaker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		94744BFA284E49760093CE6E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				94744BFC284E49A70093CE6E /* CustomInitalizer.swift */,
+				94744C02284E933C0093CE6E /* Alertable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		94744BFE284E49C40093CE6E /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				94744BD7284E28B10093CE6E /* SceneDelegate.swift */,
+				94744BD5284E28B10093CE6E /* AppDelegate.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94744BD1284E28B10093CE6E /* JuiceMaker+Combine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94744BE6284E28B30093CE6E /* Build configuration list for PBXNativeTarget "JuiceMaker+Combine" */;
+			buildPhases = (
+				94744BCE284E28B10093CE6E /* Sources */,
+				94744BCF284E28B10093CE6E /* Frameworks */,
+				94744BD0284E28B10093CE6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JuiceMaker+Combine";
+			packageProductDependencies = (
+				94744BF8284E490D0093CE6E /* SnapKit */,
+			);
+			productName = "JuiceMaker+Combine";
+			productReference = 94744BD2284E28B10093CE6E /* JuiceMaker+Combine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94744BCA284E28B10093CE6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					94744BD1284E28B10093CE6E = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 94744BCD284E28B10093CE6E /* Build configuration list for PBXProject "JuiceMaker+Combine" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 94744BC9284E28B10093CE6E;
+			packageReferences = (
+				94744BF7284E490B0093CE6E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = 94744BD3284E28B10093CE6E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94744BD1284E28B10093CE6E /* JuiceMaker+Combine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94744BD0284E28B10093CE6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94744BE2284E28B30093CE6E /* LaunchScreen.storyboard in Resources */,
+				94744BDF284E28B30093CE6E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94744BCE284E28B10093CE6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94744BFD284E49A70093CE6E /* CustomInitalizer.swift in Sources */,
+				94744BF4284E30FF0093CE6E /* StockError.swift in Sources */,
+				94744BED284E2B540093CE6E /* Fruit.swift in Sources */,
+				94744BDA284E28B10093CE6E /* OrderViewController.swift in Sources */,
+				94744BF6284E318E0093CE6E /* JuiceMaker.swift in Sources */,
+				94744BF2284E2D090093CE6E /* FruitStore.swift in Sources */,
+				94744BD6284E28B10093CE6E /* AppDelegate.swift in Sources */,
+				94744C07284E97EF0093CE6E /* StockViewController.swift in Sources */,
+				94744C01284E7DDA0093CE6E /* FruitViewModel.swift in Sources */,
+				94744C03284E933D0093CE6E /* Alertable.swift in Sources */,
+				94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */,
+				94744BF0284E2CCB0093CE6E /* Juice.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		94744BE0284E28B30093CE6E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94744BE1284E28B30093CE6E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94744BE4284E28B30093CE6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		94744BE5284E28B30093CE6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94744BE7284E28B30093CE6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56M5N9M2PX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JuiceMaker+Combine/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.whqtkf12.JuiceMaker-Combine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94744BE8284E28B30093CE6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56M5N9M2PX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JuiceMaker+Combine/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.whqtkf12.JuiceMaker-Combine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94744BCD284E28B10093CE6E /* Build configuration list for PBXProject "JuiceMaker+Combine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94744BE4284E28B30093CE6E /* Debug */,
+				94744BE5284E28B30093CE6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94744BE6284E28B30093CE6E /* Build configuration list for PBXNativeTarget "JuiceMaker+Combine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94744BE7284E28B30093CE6E /* Debug */,
+				94744BE8284E28B30093CE6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		94744BF7284E490B0093CE6E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		94744BF8284E490D0093CE6E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94744BF7284E490B0093CE6E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 94744BCA284E28B10093CE6E /* Project object */;
+}
