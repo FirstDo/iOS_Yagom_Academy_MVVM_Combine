@@ -5,7 +5,7 @@
 //  Created by 김도연 on 2022/06/06.
 //
 
-enum Fruit: String {
+enum Fruit: String, CaseIterable {
     case strawberry = "딸기"
     case banana = "바나나"
     case pineapple = "파인애플"
