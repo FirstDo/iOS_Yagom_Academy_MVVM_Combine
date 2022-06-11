@@ -55,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9438E1152854802500A7FAD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94744BD9284E28B10093CE6E /* OrderViewController.swift */,
+				94744C06284E97EF0093CE6E /* StockViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9438E1162854803700A7FAD3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				94744C00284E7DDA0093CE6E /* FruitViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		94744BC9284E28B10093CE6E = {
 			isa = PBXGroup;
 			children = (
@@ -74,12 +91,11 @@
 		94744BD4284E28B10093CE6E /* JuiceMaker+Combine */ = {
 			isa = PBXGroup;
 			children = (
+				9438E1162854803700A7FAD3 /* ViewModel */,
+				9438E1152854802500A7FAD3 /* View */,
+				94744BEE284E2C1F0093CE6E /* Model */,
 				94744BFE284E49C40093CE6E /* Scene */,
 				94744BFA284E49760093CE6E /* Utils */,
-				94744BEE284E2C1F0093CE6E /* Model */,
-				94744C00284E7DDA0093CE6E /* FruitViewModel.swift */,
-				94744BD9284E28B10093CE6E /* OrderViewController.swift */,
-				94744C06284E97EF0093CE6E /* StockViewController.swift */,
 				94744BDE284E28B30093CE6E /* Assets.xcassets */,
 				94744BE0284E28B30093CE6E /* LaunchScreen.storyboard */,
 				94744BE3284E28B30093CE6E /* Info.plist */,
