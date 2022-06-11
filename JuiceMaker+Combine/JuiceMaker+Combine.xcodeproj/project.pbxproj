@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9438E1182854808300A7FAD3 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E1172854808300A7FAD3 /* ViewModelType.swift */; };
+		9438E11B285481B600A7FAD3 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E11A285481B600A7FAD3 /* UIControl+Combine.swift */; };
 		94744BD6284E28B10093CE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD5284E28B10093CE6E /* AppDelegate.swift */; };
 		94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD7284E28B10093CE6E /* SceneDelegate.swift */; };
 		94744BDA284E28B10093CE6E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD9284E28B10093CE6E /* OrderViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		9438E1172854808300A7FAD3 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		9438E11A285481B600A7FAD3 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		94744BD2284E28B10093CE6E /* JuiceMaker+Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JuiceMaker+Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94744BD5284E28B10093CE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94744BD7284E28B10093CE6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9438E1192854819F00A7FAD3 /* Combine+ */ = {
+			isa = PBXGroup;
+			children = (
+				9438E11A285481B600A7FAD3 /* UIControl+Combine.swift */,
+			);
+			path = "Combine+";
+			sourceTree = "<group>";
+		};
 		94744BC9284E28B10093CE6E = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		94744BD4284E28B10093CE6E /* JuiceMaker+Combine */ = {
 			isa = PBXGroup;
 			children = (
+				9438E1192854819F00A7FAD3 /* Combine+ */,
 				9438E1162854803700A7FAD3 /* ViewModel */,
 				9438E1152854802500A7FAD3 /* View */,
 				94744BEE284E2C1F0093CE6E /* Model */,
@@ -223,6 +234,7 @@
 				94744C01284E7DDA0093CE6E /* FruitViewModel.swift in Sources */,
 				94744C03284E933D0093CE6E /* Alertable.swift in Sources */,
 				94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */,
+				9438E11B285481B600A7FAD3 /* UIControl+Combine.swift in Sources */,
 				94744BF0284E2CCB0093CE6E /* Juice.swift in Sources */,
 				9438E1182854808300A7FAD3 /* ViewModelType.swift in Sources */,
 			);
