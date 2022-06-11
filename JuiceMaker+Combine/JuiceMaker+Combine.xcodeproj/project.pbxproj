@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9438E1182854808300A7FAD3 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E1172854808300A7FAD3 /* ViewModelType.swift */; };
 		9438E11B285481B600A7FAD3 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E11A285481B600A7FAD3 /* UIControl+Combine.swift */; };
+		9438E11D2854842400A7FAD3 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E11C2854842300A7FAD3 /* UIButton+Combine.swift */; };
+		9438E11F285485DC00A7FAD3 /* UIStepper+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E11E285485DB00A7FAD3 /* UIStepper+Combine.swift */; };
 		94744BD6284E28B10093CE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD5284E28B10093CE6E /* AppDelegate.swift */; };
 		94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD7284E28B10093CE6E /* SceneDelegate.swift */; };
 		94744BDA284E28B10093CE6E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD9284E28B10093CE6E /* OrderViewController.swift */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		9438E1172854808300A7FAD3 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		9438E11A285481B600A7FAD3 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
+		9438E11C2854842300A7FAD3 /* UIButton+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
+		9438E11E285485DB00A7FAD3 /* UIStepper+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStepper+Combine.swift"; sourceTree = "<group>"; };
 		94744BD2284E28B10093CE6E /* JuiceMaker+Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JuiceMaker+Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94744BD5284E28B10093CE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94744BD7284E28B10093CE6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				9438E11A285481B600A7FAD3 /* UIControl+Combine.swift */,
+				9438E11C2854842300A7FAD3 /* UIButton+Combine.swift */,
+				9438E11E285485DB00A7FAD3 /* UIStepper+Combine.swift */,
 			);
 			path = "Combine+";
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 			files = (
 				94744BFD284E49A70093CE6E /* CustomInitalizer.swift in Sources */,
 				94744BF4284E30FF0093CE6E /* StockError.swift in Sources */,
+				9438E11D2854842400A7FAD3 /* UIButton+Combine.swift in Sources */,
 				94744BED284E2B540093CE6E /* Fruit.swift in Sources */,
 				94744BDA284E28B10093CE6E /* OrderViewController.swift in Sources */,
 				94744BF6284E318E0093CE6E /* JuiceMaker.swift in Sources */,
@@ -233,6 +240,7 @@
 				94744C07284E97EF0093CE6E /* StockViewController.swift in Sources */,
 				94744C01284E7DDA0093CE6E /* FruitViewModel.swift in Sources */,
 				94744C03284E933D0093CE6E /* Alertable.swift in Sources */,
+				9438E11F285485DC00A7FAD3 /* UIStepper+Combine.swift in Sources */,
 				94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */,
 				9438E11B285481B600A7FAD3 /* UIControl+Combine.swift in Sources */,
 				94744BF0284E2CCB0093CE6E /* Juice.swift in Sources */,
