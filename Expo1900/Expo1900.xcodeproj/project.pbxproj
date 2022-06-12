@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8610EE8F280E7E5B0068AF72 /* ExpoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610EE8E280E7E5B0068AF72 /* ExpoNavigationController.swift */; };
 		8610EE91280E93420068AF72 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610EE90280E93420068AF72 /* Alertable.swift */; };
-		86876809280BCEEE00FC1565 /* HeritageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86876808280BCEEE00FC1565 /* HeritageDetailView.swift */; };
 		86876813280BF8BD00FC1565 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86876812280BF8BD00FC1565 /* Array+.swift */; };
 		86AEC4FB2806BFBE00820C60 /* HeritageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AEC4FA2806BFBE00820C60 /* HeritageViewController.swift */; };
 		86AEC541280BAA4200820C60 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AEC540280BAA4200820C60 /* UIStackView+.swift */; };
@@ -24,6 +23,7 @@
 		94AC9AFD2806C64E00ADC9E1 /* HeritageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AC9AFC2806C64E00ADC9E1 /* HeritageCell.swift */; };
 		94AC9AFF2806EC6400ADC9E1 /* HeritageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AC9AFE2806EC6400ADC9E1 /* HeritageDetailViewController.swift */; };
 		94CC02902855DFBE00870389 /* HeritageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC028F2855DFBE00870389 /* HeritageViewModel.swift */; };
+		94CC02922855E86D00870389 /* HeritageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC02912855E86D00870389 /* HeritageDetailViewModel.swift */; };
 		C79FF4B52589F401005FB0FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FF4B42589F401005FB0FD /* AppDelegate.swift */; };
 		C79FF4B72589F401005FB0FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FF4B62589F401005FB0FD /* SceneDelegate.swift */; };
 		C79FF4B92589F401005FB0FD /* ExpoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FF4B82589F401005FB0FD /* ExpoViewController.swift */; };
@@ -44,7 +44,6 @@
 /* Begin PBXFileReference section */
 		8610EE8E280E7E5B0068AF72 /* ExpoNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpoNavigationController.swift; sourceTree = "<group>"; };
 		8610EE90280E93420068AF72 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
-		86876808280BCEEE00FC1565 /* HeritageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageDetailView.swift; sourceTree = "<group>"; };
 		86876812280BF8BD00FC1565 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		86AEC4FA2806BFBE00820C60 /* HeritageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageViewController.swift; sourceTree = "<group>"; };
 		86AEC540280BAA4200820C60 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		94AC9AFC2806C64E00ADC9E1 /* HeritageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageCell.swift; sourceTree = "<group>"; };
 		94AC9AFE2806EC6400ADC9E1 /* HeritageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageDetailViewController.swift; sourceTree = "<group>"; };
 		94CC028F2855DFBE00870389 /* HeritageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageViewModel.swift; sourceTree = "<group>"; };
+		94CC02912855E86D00870389 /* HeritageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageDetailViewModel.swift; sourceTree = "<group>"; };
 		C79FF4B12589F401005FB0FD /* Expo1900.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expo1900.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79FF4B42589F401005FB0FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C79FF4B62589F401005FB0FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				94AC9AFE2806EC6400ADC9E1 /* HeritageDetailViewController.swift */,
-				86876808280BCEEE00FC1565 /* HeritageDetailView.swift */,
+				94CC02912855E86D00870389 /* HeritageDetailViewModel.swift */,
 			);
 			path = HeritageDetailView;
 			sourceTree = "<group>";
@@ -306,9 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9492F5C0280E8C3300EC2139 /* ParseError.swift in Sources */,
-				86876809280BCEEE00FC1565 /* HeritageDetailView.swift in Sources */,
 				86AEC543280BAA5500820C60 /* UIView+.swift in Sources */,
 				9438E1322855D7EE00A7FAD3 /* ExpoViewModel.swift in Sources */,
+				94CC02922855E86D00870389 /* HeritageDetailViewModel.swift in Sources */,
 				94CC02902855DFBE00870389 /* HeritageViewModel.swift in Sources */,
 				C79FF4B92589F401005FB0FD /* ExpoViewController.swift in Sources */,
 				86876813280BF8BD00FC1565 /* Array+.swift in Sources */,

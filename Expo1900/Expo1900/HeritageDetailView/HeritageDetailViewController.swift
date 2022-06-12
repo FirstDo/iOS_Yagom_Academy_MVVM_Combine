@@ -6,23 +6,48 @@
 //
 
 import UIKit
-
-//MARK: - Const
-
-extension HeritageDetailViewController {
-  private enum Const {
-    enum Image {
-      static let defaultName = "swift"
-    }
-  }
-}
+import Combine
 
 //MARK: - ViewController
 
 final class HeritageDetailViewController: UIViewController {
   
-  private lazy var baseView = HeritageDetailView(frame: view.bounds)
+  private let baseScrollView: UIScrollView = {
+    let scrollView = UIScrollView()
+    scrollView.translatesAutoresizingMaskIntoConstraints = false
+    return scrollView
+  }()
+  
+  private let baseStackView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    stackView.axis = .vertical
+    stackView.alignment = .center
+    stackView.spacing = 10
+    return stackView
+  }()
+  
+  private lazy var heritageImageView: UIImageView = {
+    let imageView = UIImageView()
+    let width = 0.3 * self.view.bounds.width
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.widthAnchor.constraint(equalToConstant: width).isActive = true
+    imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
+    imageView.contentMode = .scaleAspectFit
+    return imageView
+  }()
+  
+  private let descriptionLabel: UILabel = {
+    let label = UILabel()
+    label.font = .preferredFont(forTextStyle: .body)
+    label.adjustsFontForContentSizeCategory = true
+    label.numberOfLines = .zero
+    return label
+  }()
+  
   private let heritage: Heritage
+  private let viewModel = HeritageDetailViewModel()
+  private var cancellables = Set<AnyCancellable>()
   
   init(heritage: Heritage) {
     self.heritage = heritage
@@ -35,18 +60,58 @@ final class HeritageDetailViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    addSubViews()
+    layout()
     attribute()
-    bind()
+    bind(to: viewModel)
+  }
+  
+  //MARK: - Layout
+  
+  private func addSubViews() {
+    view.addSubviews(baseScrollView)
+    baseScrollView.addSubviews(baseStackView)
+    baseStackView.addArrangedSubviews(heritageImageView, descriptionLabel)
+  }
+  
+  private func layout() {
+    //MARK: - baseScrollView
+    
+    NSLayoutConstraint.activate([
+      baseScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      baseScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      baseScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      baseScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+    ])
+    
+    //MARK: - baseStackView
+    
+    baseStackView.directionalLayoutMargins = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+    baseStackView.isLayoutMarginsRelativeArrangement = true
+    
+    NSLayoutConstraint.activate([
+      baseStackView.topAnchor.constraint(equalTo: baseScrollView.topAnchor),
+      baseStackView.bottomAnchor.constraint(equalTo: baseScrollView.bottomAnchor),
+      baseStackView.leadingAnchor.constraint(equalTo: baseScrollView.leadingAnchor),
+      baseStackView.trailingAnchor.constraint(equalTo: baseScrollView.trailingAnchor),
+      baseStackView.widthAnchor.constraint(equalTo: baseScrollView.widthAnchor)
+    ])
   }
   
   private func attribute() {
-    view = baseView
     view.backgroundColor = .systemBackground
   }
   
-  private func bind() {
-    title = heritage.name
-    baseView.descriptionLabel.text = heritage.description
-    baseView.heritageImageView.image = UIImage(named: heritage.imageName ?? Const.Image.defaultName)
+  private func bind(to viewModel: HeritageDetailViewModel) {
+    let input = HeritageDetailViewModel.Input(heritage: heritage)
+    let output = viewModel.transform(input: input)
+    
+    output
+      .heritageData
+      .sink { [weak self] heritage in
+        self?.title = heritage.name
+        self?.descriptionLabel.text = heritage.description
+        self?.heritageImageView.image = UIImage(named: heritage.imageName!)
+      }.store(in: &cancellables)
   }
 }
