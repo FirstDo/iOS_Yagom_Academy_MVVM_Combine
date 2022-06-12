@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9438E1182854808300A7FAD3 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E1172854808300A7FAD3 /* ViewModelType.swift */; };
+		9438E11B285481B600A7FAD3 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E11A285481B600A7FAD3 /* UIControl+Combine.swift */; };
+		9438E11D2854842400A7FAD3 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E11C2854842300A7FAD3 /* UIButton+Combine.swift */; };
+		9438E11F285485DC00A7FAD3 /* UIStepper+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E11E285485DB00A7FAD3 /* UIStepper+Combine.swift */; };
+		9438E12128549F6900A7FAD3 /* FruitStockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E12028549F6900A7FAD3 /* FruitStockViewModel.swift */; };
 		94744BD6284E28B10093CE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD5284E28B10093CE6E /* AppDelegate.swift */; };
 		94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD7284E28B10093CE6E /* SceneDelegate.swift */; };
 		94744BDA284E28B10093CE6E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BD9284E28B10093CE6E /* OrderViewController.swift */; };
@@ -19,12 +24,17 @@
 		94744BF6284E318E0093CE6E /* JuiceMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BF5284E318E0093CE6E /* JuiceMaker.swift */; };
 		94744BF9284E490D0093CE6E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 94744BF8284E490D0093CE6E /* SnapKit */; };
 		94744BFD284E49A70093CE6E /* CustomInitalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744BFC284E49A70093CE6E /* CustomInitalizer.swift */; };
-		94744C01284E7DDA0093CE6E /* FruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C00284E7DDA0093CE6E /* FruitViewModel.swift */; };
+		94744C01284E7DDA0093CE6E /* JuiceMakerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C00284E7DDA0093CE6E /* JuiceMakerViewModel.swift */; };
 		94744C03284E933D0093CE6E /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C02284E933C0093CE6E /* Alertable.swift */; };
 		94744C07284E97EF0093CE6E /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C06284E97EF0093CE6E /* StockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9438E1172854808300A7FAD3 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		9438E11A285481B600A7FAD3 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
+		9438E11C2854842300A7FAD3 /* UIButton+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
+		9438E11E285485DB00A7FAD3 /* UIStepper+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStepper+Combine.swift"; sourceTree = "<group>"; };
+		9438E12028549F6900A7FAD3 /* FruitStockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStockViewModel.swift; sourceTree = "<group>"; };
 		94744BD2284E28B10093CE6E /* JuiceMaker+Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JuiceMaker+Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94744BD5284E28B10093CE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94744BD7284E28B10093CE6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +48,7 @@
 		94744BF3284E30FF0093CE6E /* StockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockError.swift; sourceTree = "<group>"; };
 		94744BF5284E318E0093CE6E /* JuiceMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMaker.swift; sourceTree = "<group>"; };
 		94744BFC284E49A70093CE6E /* CustomInitalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInitalizer.swift; sourceTree = "<group>"; };
-		94744C00284E7DDA0093CE6E /* FruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModel.swift; sourceTree = "<group>"; };
+		94744C00284E7DDA0093CE6E /* JuiceMakerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerViewModel.swift; sourceTree = "<group>"; };
 		94744C02284E933C0093CE6E /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		94744C06284E97EF0093CE6E /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,6 +65,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9438E1152854802500A7FAD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94744BD9284E28B10093CE6E /* OrderViewController.swift */,
+				94744C06284E97EF0093CE6E /* StockViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9438E1162854803700A7FAD3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9438E1172854808300A7FAD3 /* ViewModelType.swift */,
+				94744C00284E7DDA0093CE6E /* JuiceMakerViewModel.swift */,
+				9438E12028549F6900A7FAD3 /* FruitStockViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9438E1192854819F00A7FAD3 /* Combine+ */ = {
+			isa = PBXGroup;
+			children = (
+				9438E11A285481B600A7FAD3 /* UIControl+Combine.swift */,
+				9438E11C2854842300A7FAD3 /* UIButton+Combine.swift */,
+				9438E11E285485DB00A7FAD3 /* UIStepper+Combine.swift */,
+			);
+			path = "Combine+";
+			sourceTree = "<group>";
+		};
 		94744BC9284E28B10093CE6E = {
 			isa = PBXGroup;
 			children = (
@@ -74,12 +113,12 @@
 		94744BD4284E28B10093CE6E /* JuiceMaker+Combine */ = {
 			isa = PBXGroup;
 			children = (
+				9438E1192854819F00A7FAD3 /* Combine+ */,
+				9438E1162854803700A7FAD3 /* ViewModel */,
+				9438E1152854802500A7FAD3 /* View */,
+				94744BEE284E2C1F0093CE6E /* Model */,
 				94744BFE284E49C40093CE6E /* Scene */,
 				94744BFA284E49760093CE6E /* Utils */,
-				94744BEE284E2C1F0093CE6E /* Model */,
-				94744C00284E7DDA0093CE6E /* FruitViewModel.swift */,
-				94744BD9284E28B10093CE6E /* OrderViewController.swift */,
-				94744C06284E97EF0093CE6E /* StockViewController.swift */,
 				94744BDE284E28B30093CE6E /* Assets.xcassets */,
 				94744BE0284E28B30093CE6E /* LaunchScreen.storyboard */,
 				94744BE3284E28B30093CE6E /* Info.plist */,
@@ -195,16 +234,21 @@
 			files = (
 				94744BFD284E49A70093CE6E /* CustomInitalizer.swift in Sources */,
 				94744BF4284E30FF0093CE6E /* StockError.swift in Sources */,
+				9438E11D2854842400A7FAD3 /* UIButton+Combine.swift in Sources */,
 				94744BED284E2B540093CE6E /* Fruit.swift in Sources */,
 				94744BDA284E28B10093CE6E /* OrderViewController.swift in Sources */,
 				94744BF6284E318E0093CE6E /* JuiceMaker.swift in Sources */,
 				94744BF2284E2D090093CE6E /* FruitStore.swift in Sources */,
+				9438E12128549F6900A7FAD3 /* FruitStockViewModel.swift in Sources */,
 				94744BD6284E28B10093CE6E /* AppDelegate.swift in Sources */,
 				94744C07284E97EF0093CE6E /* StockViewController.swift in Sources */,
-				94744C01284E7DDA0093CE6E /* FruitViewModel.swift in Sources */,
+				94744C01284E7DDA0093CE6E /* JuiceMakerViewModel.swift in Sources */,
 				94744C03284E933D0093CE6E /* Alertable.swift in Sources */,
+				9438E11F285485DC00A7FAD3 /* UIStepper+Combine.swift in Sources */,
 				94744BD8284E28B10093CE6E /* SceneDelegate.swift in Sources */,
+				9438E11B285481B600A7FAD3 /* UIControl+Combine.swift in Sources */,
 				94744BF0284E2CCB0093CE6E /* Juice.swift in Sources */,
+				9438E1182854808300A7FAD3 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
