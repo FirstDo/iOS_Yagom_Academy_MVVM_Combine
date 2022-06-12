@@ -6,102 +6,93 @@
 //
 
 import UIKit
-
-//MARK: - Const
-
-extension HeritageViewController {
-  private enum Const {
-    enum File {
-      static let name = "items"
-    }
-    
-    enum Navigation {
-      static let title = "한국의 출품작"
-    }
-  }
-}
-
-//MARK: - ViewController
+import Combine
 
 final class HeritageViewController: UIViewController, Alertable {
-  private lazy var baseView = HeritageView(frame: view.bounds)
-  private var heritageList: [Heritage]? {
-    didSet {
-      DispatchQueue.main.async {
-        self.baseView.tableView.reloadData()
-      }
-    }
-  }
+  private typealias DataSource = UITableViewDiffableDataSource<Int, Heritage>
+  private typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Heritage>
+  
+  private var dataSource: DataSource!
+  private var snapshot: Snapshot = Snapshot()
+  
+  private let tableView: UITableView = {
+    let tableView = UITableView()
+    tableView.translatesAutoresizingMaskIntoConstraints = false
+    return tableView
+  }()
+  
+  private var cancellables = Set<AnyCancellable>()
+  private let viewModel = HeritageViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    layout()
     attribute()
-    request(name: Const.File.name) { result in
-      switch result {
-      case .success(let data):
-        heritageList = data
-      case .failure(let error):
-        showAlert(errorMessage: error.localizedDescription)
-      }
-    }
+    bind(to: viewModel)
+  }
+  
+  private func layout() {
+    view.addSubview(tableView)
+    
+    NSLayoutConstraint.activate([
+      tableView.topAnchor.constraint(equalTo: view.topAnchor),
+      tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+    ])
   }
   
   private func attribute() {
-    view = baseView
     view.backgroundColor = .systemBackground
-    title = Const.Navigation.title
-    
-    baseView.tableView.register(HeritageCell.self, forCellReuseIdentifier: HeritageCell.identifier)
-    baseView.tableView.dataSource = self
-    baseView.tableView.delegate = self
+    title = "한국의 출품작"
+    setTableView()
   }
   
-  private func request(name: String, completion: (Result<[Heritage], ParseError>) -> Void) {
-    guard let data = NSDataAsset(name: name)?.data else {
-      completion(.failure(.invalidName))
-      return
-    }
-    do {
-      let decodedData = try JSONDecoder().decode([Heritage].self, from: data)
-      completion(.success(decodedData))
-    } catch {
-      completion(.failure(.decodeFail))
-    }
-  }
-}
-
-//MARK: - TableView DataSource
-
-extension HeritageViewController: UITableViewDataSource {
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return heritageList?.count ?? .zero
+  private func setTableView() {
+    tableView.register(HeritageCell.self, forCellReuseIdentifier: HeritageCell.identifier)
+    tableView.delegate = self
+    
+    makeDataSource()
+    makeSnapshot()
   }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(
-      withIdentifier: HeritageCell.identifier,
-      for: indexPath
-    ) as? HeritageCell else {
-      return UITableViewCell()
+  private func bind(to viewModel: HeritageViewModel) {
+    let output = viewModel.transform(input: HeritageViewModel.Input())
+    
+    output.heritageData.sink { finished in
+      print(finished)
+    } receiveValue: { [weak self] heritageList in
+      self?.applySnapshot(heritageList)
     }
-    
-    cell.update(with: heritageList?[safe: indexPath.row])
-    
-    return cell
+    .store(in: &cancellables)
+  }
+  
+  private func makeDataSource() {
+    dataSource = DataSource(tableView: tableView) { tableView, indexPath, itemIdentifier in
+      let cell = tableView.dequeueReusableCell(withIdentifier: HeritageCell.identifier, for: indexPath) as? HeritageCell
+      cell?.update(with: itemIdentifier)
+      return cell
+    }
+  }
+  
+  private func makeSnapshot() {
+    snapshot.appendSections([0])
+    dataSource.apply(snapshot)
+  }
+  
+  private func applySnapshot(_ heritages: [Heritage]) {
+    snapshot.appendItems(heritages)
+    dataSource.apply(snapshot)
   }
 }
 
 //MARK: - TableView Delegate
 
 extension HeritageViewController: UITableViewDelegate {
-  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let heritage = heritageList?[safe: indexPath.row] else {
-      return
-    }
-    
     tableView.deselectRow(at: indexPath, animated: true)
+    
+    guard let heritage = snapshot.itemIdentifiers[safe: indexPath.row] else { return }
     
     let heritageDetailViewController = HeritageDetailViewController(heritage: heritage)
     navigationController?.pushViewController(heritageDetailViewController, animated: true)

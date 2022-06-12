@@ -5,7 +5,7 @@
 //  Created by Taeangel, dudu on 2022/04/11.
 //
 
-struct Heritage: Decodable {
+struct Heritage: Decodable, Hashable {
   let name: String?
   let imageName: String?
   let shortDescription: String?

@@ -18,11 +18,12 @@
 		86CC10FC2804306F0020BFB2 /* DecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC10FB2804306F0020BFB2 /* DecodeTests.swift */; };
 		9438E1322855D7EE00A7FAD3 /* ExpoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E1312855D7EE00A7FAD3 /* ExpoViewModel.swift */; };
 		9438E1342855D80100A7FAD3 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E1332855D80000A7FAD3 /* ViewModelType.swift */; };
+		9438E1362855DEBC00A7FAD3 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E1352855DEBC00A7FAD3 /* UITableViewCell+.swift */; };
 		9443B8ED28042D3D00C80148 /* Heritage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9443B8EC28042D3D00C80148 /* Heritage.swift */; };
 		9492F5C0280E8C3300EC2139 /* ParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9492F5BF280E8C3300EC2139 /* ParseError.swift */; };
 		94AC9AFD2806C64E00ADC9E1 /* HeritageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AC9AFC2806C64E00ADC9E1 /* HeritageCell.swift */; };
 		94AC9AFF2806EC6400ADC9E1 /* HeritageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AC9AFE2806EC6400ADC9E1 /* HeritageDetailViewController.swift */; };
-		94FB1EA6280BBCA90045A25E /* HeritageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB1EA5280BBCA90045A25E /* HeritageView.swift */; };
+		94CC02902855DFBE00870389 /* HeritageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC028F2855DFBE00870389 /* HeritageViewModel.swift */; };
 		C79FF4B52589F401005FB0FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FF4B42589F401005FB0FD /* AppDelegate.swift */; };
 		C79FF4B72589F401005FB0FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FF4B62589F401005FB0FD /* SceneDelegate.swift */; };
 		C79FF4B92589F401005FB0FD /* ExpoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79FF4B82589F401005FB0FD /* ExpoViewController.swift */; };
@@ -53,11 +54,12 @@
 		86CC10FB2804306F0020BFB2 /* DecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeTests.swift; sourceTree = "<group>"; };
 		9438E1312855D7EE00A7FAD3 /* ExpoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpoViewModel.swift; sourceTree = "<group>"; };
 		9438E1332855D80000A7FAD3 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		9438E1352855DEBC00A7FAD3 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		9443B8EC28042D3D00C80148 /* Heritage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heritage.swift; sourceTree = "<group>"; };
 		9492F5BF280E8C3300EC2139 /* ParseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseError.swift; sourceTree = "<group>"; };
 		94AC9AFC2806C64E00ADC9E1 /* HeritageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageCell.swift; sourceTree = "<group>"; };
 		94AC9AFE2806EC6400ADC9E1 /* HeritageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageDetailViewController.swift; sourceTree = "<group>"; };
-		94FB1EA5280BBCA90045A25E /* HeritageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageView.swift; sourceTree = "<group>"; };
+		94CC028F2855DFBE00870389 /* HeritageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeritageViewModel.swift; sourceTree = "<group>"; };
 		C79FF4B12589F401005FB0FD /* Expo1900.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expo1900.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79FF4B42589F401005FB0FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C79FF4B62589F401005FB0FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				8610EE90280E93420068AF72 /* Alertable.swift */,
 				9438E1332855D80000A7FAD3 /* ViewModelType.swift */,
+				9438E1352855DEBC00A7FAD3 /* UITableViewCell+.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -145,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				86AEC4FA2806BFBE00820C60 /* HeritageViewController.swift */,
-				94FB1EA5280BBCA90045A25E /* HeritageView.swift */,
+				94CC028F2855DFBE00870389 /* HeritageViewModel.swift */,
 				94AC9AFC2806C64E00ADC9E1 /* HeritageCell.swift */,
 			);
 			path = HeritageView;
@@ -306,8 +309,10 @@
 				86876809280BCEEE00FC1565 /* HeritageDetailView.swift in Sources */,
 				86AEC543280BAA5500820C60 /* UIView+.swift in Sources */,
 				9438E1322855D7EE00A7FAD3 /* ExpoViewModel.swift in Sources */,
+				94CC02902855DFBE00870389 /* HeritageViewModel.swift in Sources */,
 				C79FF4B92589F401005FB0FD /* ExpoViewController.swift in Sources */,
 				86876813280BF8BD00FC1565 /* Array+.swift in Sources */,
+				9438E1362855DEBC00A7FAD3 /* UITableViewCell+.swift in Sources */,
 				8610EE91280E93420068AF72 /* Alertable.swift in Sources */,
 				86CC10F4280429AF0020BFB2 /* Expo.swift in Sources */,
 				9438E1342855D80100A7FAD3 /* ViewModelType.swift in Sources */,
@@ -318,7 +323,6 @@
 				94AC9AFD2806C64E00ADC9E1 /* HeritageCell.swift in Sources */,
 				86AEC541280BAA4200820C60 /* UIStackView+.swift in Sources */,
 				C79FF4B72589F401005FB0FD /* SceneDelegate.swift in Sources */,
-				94FB1EA6280BBCA90045A25E /* HeritageView.swift in Sources */,
 				94AC9AFF2806EC6400ADC9E1 /* HeritageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
