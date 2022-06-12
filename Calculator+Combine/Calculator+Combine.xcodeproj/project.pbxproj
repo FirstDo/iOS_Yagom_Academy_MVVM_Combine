@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9438E1242855B03400A7FAD3 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E1232855B03400A7FAD3 /* UIControl+.swift */; };
+		9438E1262855B04600A7FAD3 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438E1252855B04600A7FAD3 /* UIButton+.swift */; };
 		94744C35284EADAC0093CE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C34284EADAC0093CE6E /* AppDelegate.swift */; };
 		94744C37284EADAC0093CE6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C36284EADAC0093CE6E /* SceneDelegate.swift */; };
 		94744C39284EADAC0093CE6E /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94744C38284EADAC0093CE6E /* CalculatorViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9438E1232855B03400A7FAD3 /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
+		9438E1252855B04600A7FAD3 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		94744C31284EADAC0093CE6E /* Calculator+Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calculator+Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94744C34284EADAC0093CE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94744C36284EADAC0093CE6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9438E1222855B02000A7FAD3 /* Combine+ */ = {
+			isa = PBXGroup;
+			children = (
+				9438E1232855B03400A7FAD3 /* UIControl+.swift */,
+				9438E1252855B04600A7FAD3 /* UIButton+.swift */,
+			);
+			path = "Combine+";
+			sourceTree = "<group>";
+		};
 		94744C28284EADAC0093CE6E = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +69,7 @@
 		94744C33284EADAC0093CE6E /* Calculator+Combine */ = {
 			isa = PBXGroup;
 			children = (
+				9438E1222855B02000A7FAD3 /* Combine+ */,
 				94744C34284EADAC0093CE6E /* AppDelegate.swift */,
 				94744C36284EADAC0093CE6E /* SceneDelegate.swift */,
 				94744C38284EADAC0093CE6E /* CalculatorViewController.swift */,
@@ -143,8 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				94744C39284EADAC0093CE6E /* CalculatorViewController.swift in Sources */,
+				9438E1242855B03400A7FAD3 /* UIControl+.swift in Sources */,
 				94744C35284EADAC0093CE6E /* AppDelegate.swift in Sources */,
 				94744C37284EADAC0093CE6E /* SceneDelegate.swift in Sources */,
+				9438E1262855B04600A7FAD3 /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
