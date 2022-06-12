@@ -9,12 +9,9 @@ import UIKit
 import Combine
 
 extension UIStepper {
-    func valuePublisher() -> AnyPublisher<Double, Never> {
-        return controlPublisher(for: .touchUpInside)
-            .map { control in
-                guard let stepper = control as? UIStepper else { return 0 }
-                return stepper.value
-            }
+    var publisher: AnyPublisher<UIStepper, Never> {
+        return controlPublisher(for: .valueChanged)
+            .map { $0 as! UIStepper }
             .eraseToAnyPublisher()
     }
 }

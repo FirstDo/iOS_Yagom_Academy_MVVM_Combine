@@ -9,9 +9,9 @@ import UIKit
 import Combine
 
 extension UIButton {
-    func tapPublisher() -> AnyPublisher<Void, Never> {
+    var publisher: AnyPublisher<UIButton, Never> {
         return controlPublisher(for: .touchUpInside)
-            .map { _ in }
+            .map { $0 as! UIButton }
             .eraseToAnyPublisher()
     }
 }

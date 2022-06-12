@@ -97,15 +97,15 @@ final class OrderViewController: UIViewController, Alertable {
         .mango: mangoStockLabel
     ]
     
-    private let viewModel = FruitViewModel()
-    private var cancellBag = Set<AnyCancellable>()
+    private let viewModel = JuiceMakerViewModel()
+    private var cancellables = Set<AnyCancellable>()
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        bind()
+        bind(to: viewModel)
     }
     
     // MARK: - SetUp
@@ -114,7 +114,6 @@ final class OrderViewController: UIViewController, Alertable {
         setView()
         setLayout()
         setNavigation()
-        setOrderButton()
     }
     
     private func setView() {
@@ -154,43 +153,43 @@ final class OrderViewController: UIViewController, Alertable {
         present(UINavigationController(rootViewController: StockViewController()), animated: true)
     }
     
-    private func setOrderButton() {
-        buttonAndJuice.keys.forEach { button in
-            button.addTarget(self, action: #selector(juiceOrderButtonTapped(sender:)), for: .touchUpInside)
-        }
-    }
-    
-    @objc
-    private func juiceOrderButtonTapped(sender: UIButton) {
-        viewModel
-            .orderButtonTapped(juice: buttonAndJuice[sender]!)
-            .sink { [weak self] finished in
-                if finished == .failure(.notEnoughFruit) {
-                    self?.show(
-                        message: "재료가 모자라요. 재고를 수정할까요?",
-                        okAction: { self?.present(UINavigationController(rootViewController: StockViewController()), animated: true) },
-                        cancelAction: {}
-                    )
-                }
-            } receiveValue: { [weak self] juiceName in
-                self?.show(
-                    message: "\(juiceName) 나왔습니다! 맛있게 드세요!",
-                    okAction: {}
-                )
-            }
-            .store(in: &cancellBag)
-    }
-    
     // MARK: - View, Model Binding
     
-    private func bind() {
-        viewModel
-            .publishFruitStock
-            .sink { [weak self] stocks in
-                for (fruit, amount) in stocks {
-                    self?.fruitAndLabel[fruit]?.text = "\(amount)"
-                }
+    func bind(to viewModel: JuiceMakerViewModel) {        
+        let juiceButtonTapped = strawberryBananaButton
+            .publisher
+            .merge(
+                with: mangoKiwiButton.publisher,
+                strawberryButton.publisher,
+                bananaButton.publisher,
+                pineappleButton.publisher,
+                kiwiButton.publisher,
+                mangoButton.publisher
+            )
+            .map { self.buttonAndJuice[$0]! }
+            .eraseToAnyPublisher()
+
+        let input = JuiceMakerViewModel.Input(juiceButtonTapped: juiceButtonTapped)
+
+        let output = viewModel.transform(input: input)
+
+        output.fruitStock.sink { [weak self] stocks in
+            stocks.forEach { (fruit, amount) in
+                self?.fruitAndLabel[fruit]?.text = "\(amount)"
             }
-            .store(in: &cancellBag)
+        }
+        .store(in: &cancellables)
+
+        output.juiceOrderResult.sink { result in
+            switch result {
+            case true:
+                self.show(message: "쥬스 나왔습니다! 맛있게 드세요!", okAction: {})
+            case false:
+                self.show(message: "재고가 모자라요. 재고를 수정할까요?", okAction: {
+                    self.rightBarButtonTapped()
+                }, cancelAction: {})
+            }
+        }
+        .store(in: &cancellables)
     }
 }

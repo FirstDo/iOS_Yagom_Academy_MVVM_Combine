@@ -79,15 +79,15 @@ final class StockViewController: UIViewController {
         .mango: mangoStepper
     ]
     
-    private let viewModel = FruitViewModel()
-    private var cancellBag = Set<AnyCancellable>()
+    private let viewModel = FruitStockViewModel()
+    private var cancellables = Set<AnyCancellable>()
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        bind()
+        bind(to: viewModel)
     }
     
     // MARK: - SetUp
@@ -96,7 +96,6 @@ final class StockViewController: UIViewController {
         setView()
         setLayout()
         setNavigation()
-        setStepper()
     }
     
     private func setView() {
@@ -120,28 +119,35 @@ final class StockViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    private func setStepper() {
-        stepperAndFruit.keys.forEach { stepper in
-            stepper.addTarget(self, action: #selector(stepperDidTapped(sender:)), for: .valueChanged)
-        }
-    }
-    
-    @objc private func stepperDidTapped(sender: UIStepper) {
-        viewModel
-            .fruitStepperTapped(fruit: stepperAndFruit[sender]!, amount: Int(sender.value))
-    }
-    
     // MARK: - View, Model Binding
     
-    private func bind() {
-        viewModel
-            .publishFruitStock
-            .sink { [weak self] stocks in
-                for (fruit, amount) in stocks {
-                    self?.fruitAndLabel[fruit]?.text = "\(amount)"
-                    self?.fruitAndStepper[fruit]?.value = Double(amount)
-                }
+    private func bind(to viewModel: FruitStockViewModel) {
+        FruitStore.shared.stocks.forEach { (fruit, value) in
+            fruitAndStepper[fruit]?.value = Double(value)
+        }
+        
+        let stepperValueChanged = strawberryStepper
+            .publisher
+            .merge(
+                with: bananaStepper.publisher,
+                strawberryStepper.publisher,
+                kiwiStepper.publisher,
+                mangoStepper.publisher,
+                pineappleStepper.publisher
+            )
+            .map { stepper in
+                (self.stepperAndFruit[stepper]!, Int(stepper.value))
             }
-            .store(in: &cancellBag)
+            .eraseToAnyPublisher()
+
+        let input = FruitStockViewModel.Input(fruitStepperValueChanged: stepperValueChanged)
+        let output = viewModel.transform(input: input)
+
+        output.fruitStock.sink { [weak self] stocks in
+            for (fruit, amount) in stocks {
+                self?.fruitAndLabel[fruit]?.text = "\(amount)"
+            }
+        }
+        .store(in: &cancellables)
     }
 }
