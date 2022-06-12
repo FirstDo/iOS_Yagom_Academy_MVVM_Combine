@@ -41,7 +41,7 @@ final class HeritageViewController: UIViewController, Alertable {
       case .success(let data):
         heritageList = data
       case .failure(let error):
-        showAlert(errorMessage: error.localizedDescription, viewController: self)
+        showAlert(errorMessage: error.localizedDescription)
       }
     }
   }
